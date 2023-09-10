@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="UML_03_cards">
+  <ClassDiagramComponents>
+    <Class name="card" package="Entity" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="number" type="int" visibility="private"/>
+        <Field name="suit" type="String" visibility="private"/>
+        <Field name="position" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="number"/>
+          <Argument type="String" name="suit"/>
+          <Argument type="int" name="position"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNumber" returnType="int" visibility="public"/>
+        <Method name="setNumber" returnType="void" visibility="public">
+          <Argument type="int" name="number"/>
+        </Method>
+        <Method name="getSuit" returnType="String" visibility="public"/>
+        <Method name="setSuit" returnType="void" visibility="public">
+          <Argument type="String" name="suit"/>
+        </Method>
+        <Method name="getPosition" returnType="int" visibility="public"/>
+        <Method name="setPosition" returnType="void" visibility="public">
+          <Argument type="int" name="position"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="cardsService" package="Service" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="leer" type="Scanner" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="fillCards" returnType="ArrayList&lt;card&gt;" visibility="public"/>
+        <Method name="shuffle" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;card&gt;" name="cards"/>
+        </Method>
+        <Method name="nextCard" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;card&gt;" name="cards"/>
+        </Method>
+        <Method name="availableCards" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;card&gt;" name="cards"/>
+          <Argument type="card" name="c1"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UML_03_cards" package="uml_03_cards" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Service.cardsService" target="Entity.card" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
